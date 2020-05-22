@@ -18,31 +18,36 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showButton(_ sender: Any) {
-        self.alert(title: "Внимание", message: "Введите ваше имя", style: .alert)
+        self.alert(title: "Внимание", message: "Введите логин и пароль")
     }
     
     @IBAction func showSheet(_ sender: Any) {
-        self.alert(title: "Меню", message: "", style: .actionSheet)
+        self.menu()
     }
     
-    func alert(title: String, message: String, style:UIAlertController.Style){
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+    func alert(title: String, message: String){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "ok", style: .default) { (action) in
-            if (style == .alert){
-                let text = alertController.textFields?.first?.text
-                if(text == ""){
-                    self.hiLabel.text = "Hi!"
-                } else {
-                    self.hiLabel.text = "Hi, " + (text!) + "!"
-                }
+            let text = alertController.textFields?.first?.text
+            if(text == ""){
+                self.hiLabel.text = "Привет!"
+            } else {
+                self.hiLabel.text = "Привет, " + (text!) + "!"
             }
         }
         alertController.addAction(action)
-        if (style == .alert){
-            alertController.addTextField{ (textField) in
-                textField.isSecureTextEntry = true
-            }
+        alertController.addTextField()
+        alertController.addTextField{ (passwordField) in
+            passwordField.isSecureTextEntry = true
         }
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func menu(){
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Один", style: .default))
+        alertController.addAction(UIAlertAction(title: "Два", style: .default))
+        alertController.addAction(UIAlertAction(title: "Отмена", style: .cancel))
         self.present(alertController, animated: true, completion: nil)
     }
 }

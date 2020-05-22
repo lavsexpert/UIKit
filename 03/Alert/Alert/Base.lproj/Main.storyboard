@@ -24,12 +24,12 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" title="Sheet"/>
+                                <state key="normal" title="Меню"/>
                                 <connections>
                                     <action selector="showSheet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c93-uZ-sSW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4Z-7k-llP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4Z-7k-llP">
                                 <rect key="frame" x="107" y="283" width="200" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="2G7-Pf-XL2"/>
@@ -48,7 +48,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" title="Alert"/>
+                                <state key="normal" title="Вход"/>
                                 <connections>
                                     <action selector="showButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xl4-VB-dUH"/>
                                 </connections>
