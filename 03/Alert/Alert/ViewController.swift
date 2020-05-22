@@ -9,30 +9,40 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var hiLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
     @IBAction func showButton(_ sender: Any) {
-        let alertController = UIAlertController(title: "Alert", message: "Ahtung", preferredStyle: .alert)
-        let action = UIAlertAction(title: "ok", style: .default) { (action) in
-            let text = alertController.textFields?.first?.text
-            print(text ?? "nil text")
-        }
-        alertController.addTextField(configurationHandler: nil)
-        alertController.addAction(action)
-        self.present(alertController, animated: true, completion: nil)
-
+        self.alert(title: "Внимание", message: "Введите ваше имя", style: .alert)
     }
     
     @IBAction func showSheet(_ sender: Any) {
-        let alertController = UIAlertController(title: "Menu", message: "Hi", preferredStyle: .actionSheet)
+        self.alert(title: "Меню", message: "", style: .actionSheet)
+    }
+    
+    func alert(title: String, message: String, style:UIAlertController.Style){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
         let action = UIAlertAction(title: "ok", style: .default) { (action) in
-
+            if (style == .alert){
+                let text = alertController.textFields?.first?.text
+                if(text == ""){
+                    self.hiLabel.text = "Hi!"
+                } else {
+                    self.hiLabel.text = "Hi, " + (text!) + "!"
+                }
+            }
         }
         alertController.addAction(action)
+        if (style == .alert){
+            alertController.addTextField{ (textField) in
+                textField.isSecureTextEntry = true
+            }
+        }
         self.present(alertController, animated: true, completion: nil)
     }
 }

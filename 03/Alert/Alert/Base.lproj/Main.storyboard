@@ -15,21 +15,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhz-fV-cBc">
-                                <rect key="frame" x="107" y="398" width="200" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" title="Alert"/>
-                                <connections>
-                                    <action selector="showButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xl4-VB-dUH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwf-ms-IoA">
-                                <rect key="frame" x="107" y="544" width="200" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwf-ms-IoA">
+                                <rect key="frame" x="107" y="523" width="200" height="100"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="1YR-ih-bdT"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="BcJ-zk-xMc"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" title="Sheet"/>
@@ -37,10 +29,45 @@
                                     <action selector="showSheet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c93-uZ-sSW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4Z-7k-llP">
+                                <rect key="frame" x="107" y="283" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="2G7-Pf-XL2"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="5i4-J2-CSa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhz-fV-cBc">
+                                <rect key="frame" x="107" y="403" width="200" height="100"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="AfM-hz-qeW"/>
+                                    <constraint firstAttribute="height" constant="100" id="r7I-Y7-Lyk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Alert"/>
+                                <connections>
+                                    <action selector="showButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xl4-VB-dUH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lwf-ms-IoA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2MG-pm-vbR"/>
+                            <constraint firstItem="Zhz-fV-cBc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6S2-He-KV0"/>
+                            <constraint firstItem="t4Z-7k-llP" firstAttribute="bottom" secondItem="Zhz-fV-cBc" secondAttribute="top" constant="-20" id="Mm6-Ja-0xz"/>
+                            <constraint firstItem="Zhz-fV-cBc" firstAttribute="bottom" secondItem="lwf-ms-IoA" secondAttribute="top" constant="-20" id="VjZ-QX-cQz"/>
+                            <constraint firstItem="t4Z-7k-llP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="W7I-Fu-M5T"/>
+                            <constraint firstItem="Zhz-fV-cBc" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="fIS-wH-0NW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="hiLabel" destination="t4Z-7k-llP" id="uij-cu-HpK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
