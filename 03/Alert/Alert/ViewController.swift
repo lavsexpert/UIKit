@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showButton(_ sender: Any) {
-        let alertController = UIAlertController(title: "Error", message: "Ahtung", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Alert", message: "Ahtung", preferredStyle: .alert)
         let action = UIAlertAction(title: "ok", style: .default) { (action) in
             let text = alertController.textFields?.first?.text
             print(text ?? "nil text")
@@ -24,7 +24,16 @@ class ViewController: UIViewController {
         alertController.addTextField(configurationHandler: nil)
         alertController.addAction(action)
         self.present(alertController, animated: true, completion: nil)
+
     }
     
+    @IBAction func showSheet(_ sender: Any) {
+        let alertController = UIAlertController(title: "Menu", message: "Hi", preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "ok", style: .default) { (action) in
+
+        }
+        alertController.addAction(action)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
